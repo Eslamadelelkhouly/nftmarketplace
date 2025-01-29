@@ -29,19 +29,69 @@ class OnBoardingScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text(
+                    const Text(
                       StringManager.Title,
                       style: ManageStyleText.textStyleHeading,
                       textAlign: TextAlign.left,
                     ),
-                    Spacer(),
+                    const Spacer(),
                     ClipRRect(
                       child: BackdropFilter(
                         filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
                         child: Container(
+                          padding: const EdgeInsets.all(20),
                           width: 306,
                           height: 191,
                           color: ColorManager.white.withOpacity(0.5),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Text(
+                                StringManager.TitleCard,
+                                style: ManageStyleText.textStyleHeading19,
+                              ),
+                              SizedBox(
+                                height: 2,
+                              ),
+                              Text(
+                                StringManager.SubTitleCard,
+                                textAlign: TextAlign.center,
+                                style: ManageStyleText.textStyleDescription
+                                    .copyWith(
+                                  color: Colors.grey[300],
+                                ),
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              Container(
+                                width: 198,
+                                height: 45,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(33),
+                                  border: Border.all(
+                                    color: ColorManager.white,
+                                  ),
+                                ),
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(33),
+                                  child: BackdropFilter(
+                                    filter: ImageFilter.blur(
+                                      sigmaX: 10,
+                                      sigmaY: 10,
+                                    ),
+                                    child: MaterialButton(
+                                      onPressed: () {},
+                                      child: Text(
+                                        StringManager.textbutton,
+                                        style: ManageStyleText.textStyleButton,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                       borderRadius: BorderRadius.circular(27),

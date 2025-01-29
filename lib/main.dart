@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:nftmarketplace/core/resources/router_app.dart';
-import 'package:nftmarketplace/features/onboarding/on_boarding_screen.dart';
 
 void main() {
   runApp(const MyApp());
