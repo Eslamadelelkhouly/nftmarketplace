@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nftmarketplace/features/onboarding/on_boarding_screen.dart';
+import 'package:nftmarketplace/features/onboarding/screen/on_boarding_screen.dart';
 
 class RouterApp {
   static Map<String, Widget Function(BuildContext)> routes = {
