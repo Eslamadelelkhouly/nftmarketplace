@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:nftmarketplace/core/resources/asset_image_manger.dart';
 import 'package:nftmarketplace/core/resources/color_manager.dart';
@@ -33,10 +35,16 @@ class OnBoardingScreen extends StatelessWidget {
                       textAlign: TextAlign.left,
                     ),
                     Spacer(),
-                    Text(
-                      StringManager.Title,
-                      style: ManageStyleText.textStyleHeading,
-                      textAlign: TextAlign.left,
+                    ClipRRect(
+                      child: BackdropFilter(
+                        filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
+                        child: Container(
+                          width: 306,
+                          height: 191,
+                          color: ColorManager.white.withOpacity(0.5),
+                        ),
+                      ),
+                      borderRadius: BorderRadius.circular(27),
                     ),
                   ],
                 ),
