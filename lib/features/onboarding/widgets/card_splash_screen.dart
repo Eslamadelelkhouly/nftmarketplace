@@ -53,7 +53,10 @@ class CardSplashScreen extends StatelessWidget {
                 ),
                 child: CustomButtonSplashScreen(
                   onPressed: () {
-                    Navigator.pushNamed(context, NamedRoute.homeScreen);
+                    Navigator.pushReplacementNamed(
+                      context,
+                      NamedRoute.homeScreen,
+                    );
                   },
                 ),
               ),
