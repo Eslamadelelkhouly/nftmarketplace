@@ -7,8 +7,9 @@ import 'package:nftmarketplace/core/resources/string_manager.dart';
 class CustomButtonSplashScreen extends StatelessWidget {
   const CustomButtonSplashScreen({
     super.key,
+    this.onPressed,
   });
-
+  final void Function()? onPressed;
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
@@ -19,7 +20,7 @@ class CustomButtonSplashScreen extends StatelessWidget {
           sigmaY: 10,
         ),
         child: MaterialButton(
-          onPressed: () {},
+          onPressed: onPressed,
           child: Text(
             StringManager.textbutton,
             style: ManageStyleText.textStyleButton,

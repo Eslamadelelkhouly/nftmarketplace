@@ -8,6 +8,13 @@ class ManageStyleText {
     fontWeight: FontWeight.w900,
     color: ColorManager.white,
   );
+  static const TextStyle textStyleHeadingHome = TextStyle(
+    fontFamily: 'SF Pro Display',
+    fontSize: 26,
+    fontWeight: FontWeight.w900,
+    color: ColorManager.white,
+  );
+
   static const TextStyle textStyleHeading19 = TextStyle(
     fontFamily: 'SF Pro Display',
     fontSize: 19,

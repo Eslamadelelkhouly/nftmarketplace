@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:nftmarketplace/core/resources/color_manager.dart';
 import 'package:nftmarketplace/core/resources/manage_style_text.dart';
+import 'package:nftmarketplace/core/resources/router_app.dart';
 import 'package:nftmarketplace/core/resources/string_manager.dart';
 import 'package:nftmarketplace/features/onboarding/widgets/custom_button_splash_screen.dart';
 
@@ -50,7 +51,11 @@ class CardSplashScreen extends StatelessWidget {
                     color: ColorManager.white,
                   ),
                 ),
-                child: const CustomButtonSplashScreen(),
+                child: CustomButtonSplashScreen(
+                  onPressed: () {
+                    Navigator.pushNamed(context, NamedRoute.homeScreen);
+                  },
+                ),
               ),
             ],
           ),

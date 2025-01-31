@@ -6,4 +6,5 @@ NFT Marketplace''';
       r'''You can buy and sell the NFTs of the best 
       artists in the world.''';
   static const String textbutton = "Get Started now";
+  static const String TitleHome = "NFT Marketplace";
 }
