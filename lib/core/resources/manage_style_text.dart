@@ -34,4 +34,10 @@ class ManageStyleText {
     fontWeight: FontWeight.w600,
     color: ColorManager.white,
   );
+  static const TextStyle textStyleCardList = TextStyle(
+    fontFamily: 'SF Pro Display',
+    fontSize: 20,
+    fontWeight: FontWeight.w700,
+    color: ColorManager.white,
+  );
 }
