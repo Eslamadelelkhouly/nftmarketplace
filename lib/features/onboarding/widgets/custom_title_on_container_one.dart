@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:nftmarketplace/core/resources/manage_style_text.dart';
 
 class CustomTitleOnContainerOne extends StatelessWidget {
-  const CustomTitleOnContainerOne({super.key});
-
+  const CustomTitleOnContainerOne({super.key, required this.text});
+  final String text;
   @override
   Widget build(BuildContext context) {
     return BackdropFilter(
@@ -29,7 +29,7 @@ class CustomTitleOnContainerOne extends StatelessWidget {
         ),
         child: Text(
           textAlign: TextAlign.center,
-          'Art',
+          text,
           style: ManageStyleText.textStyleCardList,
         ),
       ),

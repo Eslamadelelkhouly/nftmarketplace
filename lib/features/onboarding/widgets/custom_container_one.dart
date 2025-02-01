@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CustomContainerOne extends StatelessWidget {
-  const CustomContainerOne({super.key});
-
+  const CustomContainerOne({super.key, required this.image});
+  final String image;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -11,7 +11,7 @@ class CustomContainerOne extends StatelessWidget {
       child: ClipRRect(
         borderRadius: BorderRadius.circular(11),
         child: Image.asset(
-          'assets/images/img1.jpeg',
+          image,
           fit: BoxFit.cover,
         ),
       ),
