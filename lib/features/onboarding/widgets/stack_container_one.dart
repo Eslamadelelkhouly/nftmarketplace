@@ -7,14 +7,17 @@ class StackContainerOne extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Stack(
-      children: [
-        CustomContainerOne(),
-        Positioned(
-          bottom: 0,
-          child: CustomTitleOnContainerOne(),
-        ),
-      ],
+    return Container(
+      height: 45,
+      child: const Stack(
+        children: [
+          CustomContainerOne(),
+          Positioned(
+            bottom: 0,
+            child: CustomTitleOnContainerOne(),
+          ),
+        ],
+      ),
     );
   }
 }
