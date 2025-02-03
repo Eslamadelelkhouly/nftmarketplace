@@ -40,4 +40,10 @@ class ManageStyleText {
     fontWeight: FontWeight.w700,
     color: ColorManager.white,
   );
+  static const TextStyle TitleList2 = TextStyle(
+    fontFamily: 'SF Pro Display',
+    fontSize: 18,
+    fontWeight: FontWeight.w600,
+    color: ColorManager.white,
+  );
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nftmarketplace/core/resources/color_manager.dart';
 import 'package:nftmarketplace/core/resources/manage_style_text.dart';
 import 'package:nftmarketplace/core/resources/string_manager.dart';
+import 'package:nftmarketplace/features/onboarding/widgets/container_two_home.dart';
 import 'package:nftmarketplace/features/onboarding/widgets/custom_list_view_container_one.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -22,12 +23,31 @@ class HomeScreen extends StatelessWidget {
       body: SafeArea(
         child: Container(
           width: double.infinity,
-          height: 160,
+          height: double.infinity,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(height: 15),
-              Expanded(child: const CustomListViewContainerOne()),
+              const CustomListViewContainerOne(),
+              SizedBox(height: 30),
+              Align(
+                alignment: AlignmentDirectional.centerStart,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 15),
+                  child: Column(
+                    children: [
+                      Text(
+                        'Trending Collections',
+                        style: ManageStyleText.TitleList2,
+                      ),
+                      SizedBox(
+                        height: 15,
+                      ),
+                      ContainerTwoHome(),
+                    ],
+                  ),
+                ),
+              ),
             ],
           ),
         ),
