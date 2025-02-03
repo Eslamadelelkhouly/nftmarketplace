@@ -4,6 +4,7 @@ import 'package:nftmarketplace/core/resources/manage_style_text.dart';
 import 'package:nftmarketplace/core/resources/string_manager.dart';
 import 'package:nftmarketplace/features/onboarding/widgets/container_two_home.dart';
 import 'package:nftmarketplace/features/onboarding/widgets/custom_list_view_container_one.dart';
+import 'package:nftmarketplace/features/onboarding/widgets/list_view_container_two.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -31,19 +32,21 @@ class HomeScreen extends StatelessWidget {
               const CustomListViewContainerOne(),
               SizedBox(height: 30),
               Align(
-                alignment: AlignmentDirectional.centerStart,
+                alignment: Alignment.centerLeft,
                 child: Padding(
                   padding: const EdgeInsets.only(left: 15),
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
+                        textAlign: TextAlign.start,
                         'Trending Collections',
                         style: ManageStyleText.TitleList2,
                       ),
                       SizedBox(
                         height: 15,
                       ),
-                      ContainerTwoHome(),
+                      const ListViewContainerTwo(),
                     ],
                   ),
                 ),

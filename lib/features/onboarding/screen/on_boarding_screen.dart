@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nftmarketplace/features/onboarding/widgets/background_image_splash_screen.dart';
 import 'package:nftmarketplace/features/onboarding/widgets/card_splash_screen.dart';
+import 'package:nftmarketplace/features/onboarding/widgets/list_view_container_two.dart';
 import 'package:nftmarketplace/features/onboarding/widgets/title_splash_screen.dart';
 
 class OnBoardingScreen extends StatelessWidget {

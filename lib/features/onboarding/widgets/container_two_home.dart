@@ -4,10 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:nftmarketplace/core/resources/asset_image_manger.dart';
 import 'package:nftmarketplace/core/resources/color_manager.dart';
 import 'package:nftmarketplace/core/resources/manage_style_text.dart';
+import 'package:nftmarketplace/features/onboarding/models/container_two_model.dart';
 
 class ContainerTwoHome extends StatefulWidget {
-  ContainerTwoHome({super.key});
+  ContainerTwoHome({super.key, required this.model});
   Color color = Colors.grey;
+  final ContainerTwoModel model;
 
   @override
   State<ContainerTwoHome> createState() => _ContainerTwoHomeState();
@@ -25,7 +27,6 @@ class _ContainerTwoHomeState extends State<ContainerTwoHome> {
           height: 200,
           color: ColorManager.white.withOpacity(0.5),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
                 width: 140,
@@ -34,7 +35,7 @@ class _ContainerTwoHomeState extends State<ContainerTwoHome> {
                   borderRadius: BorderRadius.circular(20),
                   image: DecorationImage(
                     fit: BoxFit.cover,
-                    image: AssetImage(AssetImageManger.image1card2),
+                    image: AssetImage(widget.model.imagecontainer),
                   ),
                 ),
               ),
@@ -45,7 +46,8 @@ class _ContainerTwoHomeState extends State<ContainerTwoHome> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    '3D Art',
+                    textAlign: TextAlign.center,
+                    widget.model.title,
                     style: ManageStyleText.textStyleDescription,
                   ),
                   Row(
