@@ -5,6 +5,7 @@ import 'package:nftmarketplace/core/resources/string_manager.dart';
 import 'package:nftmarketplace/features/onboarding/widgets/custom_card_seller.dart';
 import 'package:nftmarketplace/features/onboarding/widgets/custom_list_view_container_one.dart';
 import 'package:nftmarketplace/features/onboarding/widgets/list_view_container_two.dart';
+import 'package:nftmarketplace/features/onboarding/widgets/list_view_seller.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -58,7 +59,7 @@ class HomeScreen extends StatelessWidget {
                         SizedBox(
                           height: 15,
                         ),
-                        CustomCardSeller(),
+                        ListViewSeller(),
                       ],
                     ),
                   ),

@@ -4,10 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:nftmarketplace/core/resources/asset_image_manger.dart';
 import 'package:nftmarketplace/core/resources/color_manager.dart';
 import 'package:nftmarketplace/core/resources/manage_style_text.dart';
+import 'package:nftmarketplace/features/onboarding/models/seller_model.dart';
 
 class CustomCardSeller extends StatefulWidget {
-  CustomCardSeller({super.key});
+  CustomCardSeller({super.key, required this.model});
   Color coloricon = Colors.grey;
+  final SellerModel model;
   @override
   State<CustomCardSeller> createState() => _CustomCardSellerState();
 }
@@ -33,7 +35,7 @@ class _CustomCardSellerState extends State<CustomCardSeller> {
                   borderRadius: BorderRadius.circular(20),
                   image: DecorationImage(
                     fit: BoxFit.cover,
-                    image: AssetImage(AssetImageManger.Image1ContainerOne),
+                    image: AssetImage(widget.model.imageurl),
                   ),
                 ),
               ),
@@ -48,13 +50,13 @@ class _CustomCardSellerState extends State<CustomCardSeller> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'data',
+                        widget.model.title,
                         style: ManageStyleText.textStyleDescription.copyWith(
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                       Text(
-                        '##data',
+                        widget.model.subtitle,
                         style: ManageStyleText.textStyleDescription,
                       ),
                     ],
@@ -67,7 +69,10 @@ class _CustomCardSellerState extends State<CustomCardSeller> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Icon(Icons.hail),
-                    Text('data'),
+                    Text(
+                      widget.model.txticon,
+                      style: ManageStyleText.textStyleDescription,
+                    ),
                     Row(
                       mainAxisSize: MainAxisSize.min,
                       mainAxisAlignment: MainAxisAlignment.start,
