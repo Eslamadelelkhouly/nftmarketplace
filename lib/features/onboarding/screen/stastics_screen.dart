@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nftmarketplace/core/resources/color_manager.dart';
-import 'package:nftmarketplace/core/resources/router_app.dart';
+import 'package:nftmarketplace/core/resources/manage_style_text.dart';
+import 'package:nftmarketplace/core/resources/string_manager.dart';
 import 'package:nftmarketplace/features/onboarding/widgets/custom_navigation_bar.dart';
 
 class StasticsScreen extends StatelessWidget {
@@ -17,6 +18,20 @@ class StasticsScreen extends StatelessWidget {
               Navigator.pop(context);
             },
             onPressedStastics: () {},
+          ),
+          appBar: AppBar(
+            backgroundColor: Colors.transparent,
+            centerTitle: true,
+            actions: [
+              Padding(
+                padding: const EdgeInsets.only(right: 14),
+                child: Icon(Icons.more_horiz),
+              ),
+            ],
+            title: Text(
+              'Stats',
+              style: ManageStyleText.textStyleHeadingHome,
+            ),
           ),
         ),
         Positioned(
