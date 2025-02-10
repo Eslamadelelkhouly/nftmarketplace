@@ -1,40 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:nftmarketplace/core/resources/color_manager.dart';
-import 'package:nftmarketplace/core/resources/manage_style_text.dart';
 import 'package:nftmarketplace/core/resources/router_app.dart';
-import 'package:nftmarketplace/core/resources/string_manager.dart';
 import 'package:nftmarketplace/features/onboarding/widgets/custom_navigation_bar.dart';
-import 'package:nftmarketplace/features/onboarding/widgets/home_body.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
+class StasticsScreen extends StatelessWidget {
+  const StasticsScreen({super.key});
 
-class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
         Scaffold(
-          extendBody: true,
-          appBar: AppBar(
-            backgroundColor: Colors.transparent,
-            centerTitle: true,
-            title: Text(
-              StringManager.TitleHome,
-              style: ManageStyleText.textStyleHeadingHome,
-            ),
-          ),
-          bottomNavigationBar: CustomNavigationBar(
-            onPressedStastics: () {
-              Navigator.pushNamed(context, NamedRoute.StatisticScreen);
-            },
-            onPressedHome: () {},
-          ),
           backgroundColor: ColorManager.PrimaryBackground,
-          body: HomeBody(),
+          bottomNavigationBar: CustomNavigationBar(
+            onPressedHome: () {
+              Navigator.pop(context);
+            },
+            onPressedStastics: () {},
+          ),
         ),
         Positioned(
           left: 170,
