@@ -1,7 +1,6 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:nftmarketplace/core/resources/asset_image_manger.dart';
 import 'package:nftmarketplace/core/resources/color_manager.dart';
 import 'package:nftmarketplace/core/resources/manage_style_text.dart';
 import 'package:nftmarketplace/features/onboarding/models/container_two_model.dart';

@@ -5,4 +5,5 @@ class ColorManager {
   static const Color panfsaglight = Color(0xff767CB2);
   static const Color white = Colors.white;
   static const Color PrimaryBackground = Color(0xff211134);
+  static const Color black = Colors.black;
 }
