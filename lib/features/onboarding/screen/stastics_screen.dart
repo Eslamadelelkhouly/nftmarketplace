@@ -1,11 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:nftmarketplace/core/resources/color_manager.dart';
 import 'package:nftmarketplace/core/resources/manage_style_text.dart';
-import 'package:nftmarketplace/core/resources/string_manager.dart';
+import 'package:nftmarketplace/features/onboarding/widgets/activity_title_card.dart';
+import 'package:nftmarketplace/features/onboarding/widgets/card_title_stastic_screen.dart';
 import 'package:nftmarketplace/features/onboarding/widgets/custom_navigation_bar.dart';
 
-class StasticsScreen extends StatelessWidget {
-  const StasticsScreen({super.key});
+class StasticsScreen extends StatefulWidget {
+  StasticsScreen({super.key});
+
+  @override
+  State<StasticsScreen> createState() => _StasticsScreenState();
+}
+
+class _StasticsScreenState extends State<StasticsScreen> {
+  bool isRankActive = false;
+  bool isActivityActive = false;
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +42,43 @@ class StasticsScreen extends StatelessWidget {
               style: ManageStyleText.textStyleHeadingHome,
             ),
           ),
+          body: Column(
+            children: [
+              SizedBox(height: 10),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        isRankActive = true;
+                        isActivityActive = false;
+                      });
+                    },
+                    child: CartTitleStasticsScreen(
+                      icon: Icon(Icons.stacked_bar_chart),
+                      text: 'Ranking',
+                      active: isRankActive,
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        isActivityActive = true;
+                        isRankActive = false;
+                      });
+                    },
+                    child: ActivityTitleCard(
+                      icon: Icon(Icons.add_chart_rounded),
+                      text: 'Activity',
+                      active: isActivityActive,
+                    ),
+                  ),
+                ],
+              ),
+              Divider(thickness: 0.6, color: Colors.grey),
+            ],
+          ),
         ),
         Positioned(
           left: 170,
@@ -46,10 +92,7 @@ class StasticsScreen extends StatelessWidget {
                 color: Colors.white,
                 shape: StarBorder.polygon(sides: 6, squash: 0.5),
               ),
-              child: Icon(
-                Icons.add,
-                color: ColorManager.black,
-              ),
+              child: Icon(Icons.add, color: ColorManager.black),
             ),
           ),
         ),

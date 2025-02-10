@@ -7,7 +7,7 @@ class RouterApp {
   static Map<String, Widget Function(BuildContext)> routes = {
     NamedRoute.onBoarding: (context) => const OnBoardingScreen(),
     NamedRoute.homeScreen: (context) => const HomeScreen(),
-    NamedRoute.StatisticScreen: (context) => const StasticsScreen(),
+    NamedRoute.StatisticScreen: (context) => StasticsScreen(),
   };
 }
 
