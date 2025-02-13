@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:nftmarketplace/core/resources/asset_image_manger.dart';
 import 'package:nftmarketplace/core/resources/color_manager.dart';
 import 'package:nftmarketplace/core/resources/manage_style_text.dart';
 import 'package:nftmarketplace/features/onboarding/widgets/activity_title_card.dart';
 import 'package:nftmarketplace/features/onboarding/widgets/card_title_stastic_screen.dart';
 import 'package:nftmarketplace/features/onboarding/widgets/custom_category_stastic_screen.dart';
 import 'package:nftmarketplace/features/onboarding/widgets/custom_navigation_bar.dart';
+import 'package:nftmarketplace/features/onboarding/widgets/row_of_catergories.dart';
 
 class StasticsScreen extends StatefulWidget {
   StasticsScreen({super.key});
@@ -84,23 +86,87 @@ class _StasticsScreenState extends State<StasticsScreen> {
                 SizedBox(
                   height: 27,
                 ),
+                RowOfCategories(),
+                SizedBox(
+                  height: 27,
+                ),
                 Container(
-                  width: 330,
+                  width: 308,
+                  height: 60,
                   child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      CustomCategoryStasticScreen(
-                        text: 'All categories',
-                        iconstart: Icon(Icons.grid_view),
-                        iconend: Icon(Icons.expand_more),
+                      Text(
+                        '1',
+                        style: ManageStyleText.textStyle14.copyWith(
+                          color: Colors.grey,
+                        ),
                       ),
                       SizedBox(
-                        width: 25,
+                        width: 9,
                       ),
-                      CustomCategoryStasticScreen(
-                        text: 'All Chains',
-                        iconstart: Icon(Icons.insert_link),
-                        iconend: Icon(Icons.expand_more),
+                      Container(
+                        width: 50,
+                        height: 50,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(9),
+                          child: Image.asset(
+                            AssetImageManger.cat1,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 14,
+                      ),
+                      Container(
+                        padding: const EdgeInsets.only(top: 5),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Azumi',
+                              style: ManageStyleText.textStyleButton,
+                            ),
+                            SizedBox(
+                              height: 8,
+                            ),
+                            Text(
+                              'View info',
+                              style:
+                                  ManageStyleText.textStyleDescription.copyWith(
+                                color: Colors.grey,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        width: 100,
+                      ),
+                      Container(
+                        child: Column(
+                          children: [
+                            Text(
+                              '200055.02',
+                              style: ManageStyleText.textStyle14,
+                            ),
+                            SizedBox(
+                              height: 8,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                Text('         '),
+                                Text(
+                                  '3,99%',
+                                  style: ManageStyleText.textStyle14.copyWith(
+                                    color: Colors.green,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   ),
