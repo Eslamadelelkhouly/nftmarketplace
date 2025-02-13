@@ -41,6 +41,14 @@ class ActivityTitleCard extends StatelessWidget {
           width: 100,
           decoration: BoxDecoration(
             color: active ? Color(0xff97A9F6) : Colors.grey,
+            boxShadow: [
+              BoxShadow(
+                offset: Offset(0, -5),
+                color: active ? Color(0xff97A9F6) : Colors.transparent,
+                blurRadius: 16,
+                spreadRadius: 1,
+              ),
+            ],
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(5),
               topRight: Radius.circular(5),
