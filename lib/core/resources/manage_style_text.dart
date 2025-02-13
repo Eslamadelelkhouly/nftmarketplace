@@ -28,6 +28,12 @@ class ManageStyleText {
     fontWeight: FontWeight.w400,
     color: ColorManager.white,
   );
+  static const TextStyle textStyle14 = TextStyle(
+    fontFamily: 'SF Pro Display',
+    fontSize: 14,
+    fontWeight: FontWeight.w400,
+    color: ColorManager.white,
+  );
   static const TextStyle textStyleButton = TextStyle(
     fontFamily: 'SF Pro Display',
     fontSize: 15,

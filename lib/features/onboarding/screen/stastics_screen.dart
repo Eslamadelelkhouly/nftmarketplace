@@ -3,6 +3,7 @@ import 'package:nftmarketplace/core/resources/color_manager.dart';
 import 'package:nftmarketplace/core/resources/manage_style_text.dart';
 import 'package:nftmarketplace/features/onboarding/widgets/activity_title_card.dart';
 import 'package:nftmarketplace/features/onboarding/widgets/card_title_stastic_screen.dart';
+import 'package:nftmarketplace/features/onboarding/widgets/custom_category_stastic_screen.dart';
 import 'package:nftmarketplace/features/onboarding/widgets/custom_navigation_bar.dart';
 
 class StasticsScreen extends StatefulWidget {
@@ -77,6 +78,14 @@ class _StasticsScreenState extends State<StasticsScreen> {
                 ],
               ),
               Divider(thickness: 0.6, color: Colors.grey),
+              SizedBox(
+                height: 27,
+              ),
+              CustomCategoryStasticScreen(
+                text: 'All categories',
+                iconstart: Icon(Icons.grid_view),
+                iconend: Icon(Icons.expand_more),
+              ),
             ],
           ),
         ),
