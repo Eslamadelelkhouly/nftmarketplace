@@ -1,10 +1,12 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
-import 'package:nftmarketplace/core/resources/asset_image_manger.dart';
 import 'package:nftmarketplace/core/resources/color_manager.dart';
 import 'package:nftmarketplace/core/resources/manage_style_text.dart';
+import 'package:nftmarketplace/features/onboarding/models/container_stastic_model.dart';
 import 'package:nftmarketplace/features/onboarding/widgets/activity_title_card.dart';
 import 'package:nftmarketplace/features/onboarding/widgets/card_title_stastic_screen.dart';
-import 'package:nftmarketplace/features/onboarding/widgets/custom_category_stastic_screen.dart';
+import 'package:nftmarketplace/features/onboarding/widgets/container_body_stastics.dart';
 import 'package:nftmarketplace/features/onboarding/widgets/custom_navigation_bar.dart';
 import 'package:nftmarketplace/features/onboarding/widgets/row_of_catergories.dart';
 
@@ -90,85 +92,30 @@ class _StasticsScreenState extends State<StasticsScreen> {
                 SizedBox(
                   height: 27,
                 ),
-                Container(
-                  width: 308,
-                  height: 60,
-                  child: Row(
-                    children: [
-                      Text(
-                        '1',
-                        style: ManageStyleText.textStyle14.copyWith(
-                          color: Colors.grey,
-                        ),
-                      ),
-                      SizedBox(
-                        width: 9,
-                      ),
-                      Container(
-                        width: 50,
-                        height: 50,
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(9),
-                          child: Image.asset(
-                            AssetImageManger.cat1,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 14,
-                      ),
-                      Container(
-                        padding: const EdgeInsets.only(top: 5),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Azumi',
-                              style: ManageStyleText.textStyleButton,
-                            ),
-                            SizedBox(
-                              height: 8,
-                            ),
-                            Text(
-                              'View info',
-                              style:
-                                  ManageStyleText.textStyleDescription.copyWith(
-                                color: Colors.grey,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      SizedBox(
-                        width: 100,
-                      ),
-                      Container(
-                        child: Column(
-                          children: [
-                            Text(
-                              '200055.02',
-                              style: ManageStyleText.textStyle14,
-                            ),
-                            SizedBox(
-                              height: 8,
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                Text('         '),
-                                Text(
-                                  '3,99%',
-                                  style: ManageStyleText.textStyle14.copyWith(
-                                    color: Colors.green,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
+                BackdropFilter(
+                  filter: ImageFilter.blur(sigmaX: 0.5, sigmaY: 0.6),
+                  child: Container(
+                    margin: const EdgeInsets.all(14),
+                    width: 500,
+                    height: MediaQuery.of(context).size.height - 390,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(18),
+                      color: Colors.white.withOpacity(0.2),
+                    ),
+                    child: ListView.separated(
+                      itemBuilder: (context, index) {
+                        return Center(
+                            child: ContainerBodyStastics(
+                          model: containerstasticmodelList[index],
+                        ));
+                      },
+                      separatorBuilder: (context, index) {
+                        return SizedBox(
+                          height: 9,
+                        );
+                      },
+                      itemCount: 5,
+                    ),
                   ),
                 ),
               ],
